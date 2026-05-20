@@ -26,17 +26,17 @@ body {
 .header-left {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
 }
 
 .header-icon {
-  width: 32px;
-  height: 32px;
-  border-radius: 8px;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
 }
 
 .brand {
-  font-size: 17px;
+  font-size: 18px;
   font-weight: 700;
   background: linear-gradient(135deg, #667eea, #a78bfa);
   -webkit-background-clip: text;
