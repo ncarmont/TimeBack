@@ -1,0 +1,1093 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TimeBack Product Hunt Assets</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      width: 100%;
+      min-width: 100%;
+      min-height: 100%;
+      margin: 0;
+      background: #f8fafc;
+      color: #101828;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    body {
+      display: grid;
+      place-items: start;
+      overflow: hidden;
+    }
+
+    .ph-frame {
+      --accent: #0a66c2;
+      --accent-strong: #064d96;
+      --accent-soft: #dcecff;
+      --accent-tint: #eef6ff;
+      position: relative;
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 34px;
+      width: 1270px;
+      height: 760px;
+      overflow: hidden;
+      padding: 64px;
+      background: #f8fafc;
+      color: #101828;
+      isolation: isolate;
+    }
+
+    .ph-frame::before {
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      background:
+        linear-gradient(90deg, rgba(16, 24, 40, 0.045) 1px, transparent 1px),
+        linear-gradient(180deg, rgba(16, 24, 40, 0.045) 1px, transparent 1px);
+      background-size: 46px 46px;
+      content: "";
+    }
+
+    .ph-frame::after {
+      position: absolute;
+      inset: 0 0 0 auto;
+      z-index: -1;
+      width: 42%;
+      background: var(--accent-soft);
+      clip-path: polygon(18% 0, 100% 0, 100% 100%, 0 100%);
+      content: "";
+    }
+
+    .theme-blue { --accent: #0a66c2; --accent-strong: #064d96; --accent-soft: #dcecff; --accent-tint: #eef6ff; }
+    .theme-coral { --accent: #ff6154; --accent-strong: #c2412f; --accent-soft: #ffe1dc; --accent-tint: #fff4f1; }
+    .theme-green { --accent: #12805c; --accent-strong: #0b6648; --accent-soft: #dff5ea; --accent-tint: #effaf4; }
+    .theme-ink { --accent: #263241; --accent-strong: #111827; --accent-soft: #e3e8ef; --accent-tint: #f2f5f8; }
+    .theme-teal { --accent: #047481; --accent-strong: #07545d; --accent-soft: #d5f4f7; --accent-tint: #eefbfc; }
+    .theme-violet { --accent: #7047c6; --accent-strong: #4f2f94; --accent-soft: #ece5ff; --accent-tint: #f7f3ff; }
+    .theme-gold { --accent: #ba6b00; --accent-strong: #8b4f00; --accent-soft: #ffedc8; --accent-tint: #fff8e8; }
+    .theme-rose { --accent: #c4325f; --accent-strong: #971d45; --accent-soft: #ffe1ea; --accent-tint: #fff3f6; }
+
+    .copy {
+      z-index: 1;
+      display: grid;
+      align-content: center;
+      max-width: 500px;
+      gap: 22px;
+    }
+
+    .brand-line {
+      display: flex;
+      align-items: center;
+      width: fit-content;
+      min-height: 46px;
+      gap: 10px;
+      border: 1px solid rgba(16, 24, 40, 0.1);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.9);
+      color: var(--accent-strong);
+      font-size: 17px;
+      font-weight: 900;
+      padding: 6px 18px 6px 7px;
+      box-shadow: 0 16px 44px rgba(16, 24, 40, 0.08);
+    }
+
+    .brand-line img {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      display: block;
+    }
+
+    h1 {
+      max-width: 10ch;
+      margin: 0;
+      color: #101828;
+      font-size: 82px;
+      line-height: 0.94;
+      letter-spacing: 0;
+    }
+
+    .subline {
+      max-width: 500px;
+      margin: 0;
+      color: #475467;
+      font-size: 24px;
+      line-height: 1.36;
+      letter-spacing: 0;
+    }
+
+    .visual {
+      z-index: 1;
+      display: grid;
+      min-width: 0;
+      align-items: center;
+      justify-items: center;
+    }
+
+    .extension-mock,
+    .browser-mock,
+    .workflow-panel,
+    .proof-panel,
+    .trust-panel,
+    .metric-panel {
+      border: 1px solid rgba(16, 24, 40, 0.1);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.94);
+      box-shadow: 0 24px 60px rgba(16, 24, 40, 0.14);
+    }
+
+    .extension-mock {
+      width: 384px;
+      overflow: hidden;
+      background: #08081a;
+      color: #e2e2f0;
+    }
+
+    .mock-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      background: rgba(102, 126, 234, 0.12);
+    }
+
+    .mock-brand {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      font-weight: 900;
+    }
+
+    .mock-brand img {
+      width: 34px;
+      height: 34px;
+      border-radius: 8px;
+    }
+
+    .mock-toggle {
+      width: 48px;
+      height: 26px;
+      border-radius: 999px;
+      background: #667eea;
+      padding: 3px;
+    }
+
+    .mock-toggle::after {
+      display: block;
+      width: 20px;
+      height: 20px;
+      margin-left: auto;
+      border-radius: 50%;
+      background: #fff;
+      content: "";
+    }
+
+    .time-card {
+      margin: 18px;
+      padding: 20px 16px 16px;
+      border-radius: 8px;
+      background: #0f122b;
+      text-align: center;
+    }
+
+    .time-card strong {
+      display: block;
+      color: #4ade80;
+      font-size: 54px;
+      line-height: 1;
+      letter-spacing: 0;
+    }
+
+    .time-card span {
+      display: block;
+      margin-top: 5px;
+      color: #89e6aa;
+      font-size: 15px;
+      font-weight: 800;
+    }
+
+    .mini-metrics {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .mini-metric {
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.04);
+      padding: 11px;
+    }
+
+    .mini-metric b {
+      display: block;
+      color: #eef2ff;
+      font-size: 24px;
+      line-height: 1;
+    }
+
+    .mini-metric small {
+      display: block;
+      margin-top: 5px;
+      color: #7b82aa;
+      font-size: 10px;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .mock-section {
+      padding: 0 18px 18px;
+    }
+
+    .mock-label {
+      color: #7b82aa;
+      font-size: 11px;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .pill-row {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      gap: 10px;
+      min-height: 46px;
+      margin-top: 9px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 8px;
+      background: #10122b;
+      color: #eef2ff;
+      font-size: 15px;
+      font-weight: 850;
+      padding: 0 14px;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 8px color-mix(in srgb, var(--accent), transparent 58%);
+    }
+
+    .state {
+      border-radius: 999px;
+      background: rgba(74, 222, 128, 0.12);
+      color: #4ade80;
+      font-size: 11px;
+      font-weight: 950;
+      padding: 4px 9px;
+    }
+
+    .step-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      width: 610px;
+    }
+
+    .step-card {
+      position: relative;
+      display: grid;
+      min-height: 190px;
+      align-content: center;
+      justify-items: center;
+      gap: 12px;
+      border: 1px solid rgba(16, 24, 40, 0.1);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.94);
+      box-shadow: 0 24px 60px rgba(16, 24, 40, 0.12);
+      text-align: center;
+      padding: 22px;
+    }
+
+    .step-card b {
+      display: grid;
+      width: 44px;
+      height: 44px;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--accent);
+      color: #fff;
+      font-size: 19px;
+    }
+
+    .step-card strong {
+      color: #101828;
+      font-size: 25px;
+      line-height: 1.05;
+    }
+
+    .step-card span {
+      color: #667085;
+      font-size: 15px;
+      font-weight: 750;
+      line-height: 1.25;
+    }
+
+    .settings-board {
+      display: grid;
+      width: 620px;
+      gap: 14px;
+    }
+
+    .setting-row,
+    .setting-key {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 16px;
+      border: 1px solid rgba(16, 24, 40, 0.1);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.95);
+      box-shadow: 0 20px 54px rgba(16, 24, 40, 0.12);
+      padding: 18px 20px;
+    }
+
+    .setting-row strong,
+    .setting-key strong {
+      display: block;
+      color: #101828;
+      font-size: 22px;
+      line-height: 1.1;
+    }
+
+    .setting-row span,
+    .setting-key span {
+      display: block;
+      margin-top: 5px;
+      color: #667085;
+      font-size: 15px;
+      font-weight: 750;
+    }
+
+    .switch {
+      width: 58px;
+      height: 32px;
+      border-radius: 999px;
+      background: var(--accent);
+      padding: 4px;
+    }
+
+    .switch::after {
+      display: block;
+      width: 24px;
+      height: 24px;
+      margin-left: auto;
+      border-radius: 50%;
+      background: #fff;
+      content: "";
+    }
+
+    .masked-key {
+      min-width: 180px;
+      border: 1px solid rgba(16, 24, 40, 0.1);
+      border-radius: 8px;
+      background: var(--accent-tint);
+      color: var(--accent-strong);
+      font-size: 18px;
+      font-weight: 900;
+      text-align: center;
+      padding: 14px 18px;
+    }
+
+    .proof-panel {
+      display: grid;
+      width: 630px;
+      gap: 18px;
+      padding: 24px;
+    }
+
+    .flow-row {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr auto 1fr;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .flow-box {
+      min-height: 122px;
+      border: 1px solid rgba(16, 24, 40, 0.1);
+      border-radius: 8px;
+      background: var(--accent-tint);
+      padding: 18px;
+    }
+
+    .flow-box strong {
+      display: block;
+      color: #101828;
+      font-size: 22px;
+      line-height: 1.05;
+    }
+
+    .flow-box span {
+      display: block;
+      margin-top: 8px;
+      color: #667085;
+      font-size: 14px;
+      font-weight: 780;
+      line-height: 1.25;
+    }
+
+    .arrow {
+      color: var(--accent);
+      font-size: 26px;
+      font-weight: 950;
+    }
+
+    .site-chip-row {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .site-chip {
+      border-radius: 8px;
+      background: #101828;
+      color: #fff;
+      font-size: 15px;
+      font-weight: 900;
+      text-align: center;
+      padding: 13px 10px;
+    }
+
+    .metric-panel {
+      display: grid;
+      width: 600px;
+      gap: 16px;
+      padding: 24px;
+    }
+
+    .metric-hero {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      min-height: 134px;
+      border-radius: 8px;
+      background: #101828;
+      color: #fff;
+      padding: 24px;
+    }
+
+    .metric-hero strong {
+      display: block;
+      color: #4ade80;
+      font-size: 64px;
+      line-height: 1;
+    }
+
+    .metric-hero span {
+      display: block;
+      margin-top: 6px;
+      color: #d0d5dd;
+      font-size: 18px;
+      font-weight: 850;
+    }
+
+    .metric-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .metric-tile {
+      border: 1px solid rgba(16, 24, 40, 0.08);
+      border-radius: 8px;
+      background: var(--accent-tint);
+      padding: 15px 12px;
+      text-align: center;
+    }
+
+    .metric-tile b {
+      display: block;
+      color: var(--accent-strong);
+      font-size: 28px;
+      line-height: 1;
+    }
+
+    .metric-tile small {
+      display: block;
+      margin-top: 7px;
+      color: #667085;
+      font-size: 11px;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .browser-mock {
+      width: 640px;
+      overflow: hidden;
+    }
+
+    .browser-top {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      align-items: center;
+      gap: 14px;
+      height: 48px;
+      border-bottom: 1px solid rgba(16, 24, 40, 0.08);
+      background: #f9fafb;
+      padding: 0 14px;
+    }
+
+    .dots {
+      display: flex;
+      gap: 6px;
+    }
+
+    .dots span {
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      background: #ff6154;
+    }
+
+    .dots span:nth-child(2) {
+      background: #f5b544;
+    }
+
+    .dots span:nth-child(3) {
+      background: #27c46a;
+    }
+
+    .url {
+      overflow: hidden;
+      color: #667085;
+      font-size: 14px;
+      font-weight: 850;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .gmail-body {
+      position: relative;
+      min-height: 380px;
+      padding: 22px;
+      background: #ffffff;
+    }
+
+    .mail-row {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      min-height: 54px;
+      border-bottom: 1px solid rgba(16, 24, 40, 0.08);
+      color: #344054;
+      font-size: 17px;
+      font-weight: 850;
+    }
+
+    .mail-row button {
+      border: 0;
+      border-radius: 8px;
+      background: var(--accent);
+      color: #fff;
+      font: inherit;
+      font-size: 13px;
+      font-weight: 900;
+      padding: 9px 13px;
+    }
+
+    .gmail-overlay {
+      position: absolute;
+      right: 22px;
+      bottom: 22px;
+      width: 300px;
+      border-radius: 8px;
+      background: #101828;
+      color: #fff;
+      box-shadow: 0 22px 60px rgba(16, 24, 40, 0.22);
+      overflow: hidden;
+    }
+
+    .overlay-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: var(--accent);
+      padding: 13px 16px;
+      font-size: 16px;
+      font-weight: 950;
+    }
+
+    .overlay-body {
+      padding: 16px;
+    }
+
+    .progress-label {
+      color: #d0d5dd;
+      font-size: 14px;
+      font-weight: 800;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .progress-track {
+      height: 8px;
+      margin-top: 12px;
+      overflow: hidden;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    .progress-fill {
+      width: 62%;
+      height: 100%;
+      border-radius: inherit;
+      background: #4ade80;
+    }
+
+    .overlay-actions {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .overlay-actions span {
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+      font-size: 13px;
+      font-weight: 900;
+      text-align: center;
+      padding: 9px 8px;
+    }
+
+    .trust-panel {
+      display: grid;
+      width: 620px;
+      gap: 14px;
+      padding: 24px;
+    }
+
+    .trust-item {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      align-items: center;
+      gap: 14px;
+      border: 1px solid rgba(16, 24, 40, 0.08);
+      border-radius: 8px;
+      background: var(--accent-tint);
+      padding: 18px;
+    }
+
+    .trust-icon {
+      display: grid;
+      width: 46px;
+      height: 46px;
+      place-items: center;
+      border-radius: 8px;
+      background: var(--accent);
+      color: #fff;
+      font-size: 22px;
+      font-weight: 950;
+    }
+
+    .trust-item strong {
+      display: block;
+      color: #101828;
+      font-size: 21px;
+      line-height: 1.05;
+    }
+
+    .trust-item span {
+      display: block;
+      margin-top: 5px;
+      color: #667085;
+      font-size: 15px;
+      font-weight: 760;
+    }
+
+    .outcome-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      width: 610px;
+    }
+
+    .outcome-tile {
+      min-height: 126px;
+      border: 1px solid rgba(16, 24, 40, 0.1);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.94);
+      box-shadow: 0 24px 60px rgba(16, 24, 40, 0.12);
+      padding: 22px;
+    }
+
+    .outcome-tile strong {
+      display: block;
+      color: #101828;
+      font-size: 25px;
+      line-height: 1.05;
+    }
+
+    .outcome-tile span {
+      display: block;
+      margin-top: 9px;
+      color: #667085;
+      font-size: 15px;
+      font-weight: 760;
+      line-height: 1.3;
+    }
+
+    .thumbnail {
+      display: grid;
+      width: 240px;
+      height: 240px;
+      place-items: center;
+      overflow: hidden;
+      background: #101828;
+      color: #fff;
+      padding: 21px;
+    }
+
+    .thumbnail-inner {
+      display: grid;
+      justify-items: center;
+      gap: 12px;
+      text-align: center;
+    }
+
+    .thumbnail img {
+      width: 86px;
+      height: 86px;
+      border-radius: 20px;
+      box-shadow: 0 18px 42px rgba(0, 0, 0, 0.3);
+    }
+
+    .thumbnail strong {
+      display: block;
+      font-size: 30px;
+      line-height: 1;
+      letter-spacing: 0;
+    }
+
+    .thumbnail span {
+      display: block;
+      max-width: 170px;
+      color: #d0d5dd;
+      font-size: 14px;
+      font-weight: 800;
+      line-height: 1.25;
+    }
+  </style>
+</head>
+<body>
+  <script>
+    const iconPath = "../../icons/icon128.png";
+
+    const slides = [
+      {
+        theme: "blue",
+        kicker: "TimeBack",
+        headline: "Reclaim your day",
+        subline: "Block Shorts, feeds, and newsletter clutter from one Chrome extension.",
+        visual: "hero"
+      },
+      {
+        theme: "coral",
+        kicker: "Three switches",
+        headline: "Turn noise off",
+        subline: "Pick the blockers, browse cleaner pages, and let stats update locally.",
+        visual: "steps"
+      },
+      {
+        theme: "green",
+        kicker: "Your inputs",
+        headline: "Choose the leaks",
+        subline: "The only setup is toggles, Gmail subscriptions, and an optional OpenRouter key.",
+        visual: "ask"
+      },
+      {
+        theme: "ink",
+        kicker: "How it works",
+        headline: "Runs in Chrome",
+        subline: "Content scripts hide known feed surfaces; Gmail automation works from the subscriptions page.",
+        visual: "proof"
+      },
+      {
+        theme: "teal",
+        kicker: "Clear result",
+        headline: "See time saved",
+        subline: "Blocked Shorts, hidden videos, feed posts, and unsubs roll into weekly impact.",
+        visual: "results"
+      },
+      {
+        theme: "violet",
+        kicker: "Next action",
+        headline: "Clean Gmail faster",
+        subline: "Open the subscriptions page, unsubscribe in sequence, pause or resume any time.",
+        visual: "action"
+      },
+      {
+        theme: "gold",
+        kicker: "Trust facts",
+        headline: "No shared backend",
+        subline: "Settings stay in Chrome storage. Optional AI uses your own OpenRouter key.",
+        visual: "trust"
+      },
+      {
+        theme: "rose",
+        kicker: "Built for focus",
+        headline: "Win back hours",
+        subline: "Use it for research days, deep work, inbox cleanup, and social media boundaries.",
+        visual: "outcomes"
+      }
+    ];
+
+    function brandLine(kicker) {
+      return `
+        <div class="brand-line">
+          <img src="${iconPath}" alt="">
+          <span>${kicker}</span>
+        </div>
+      `;
+    }
+
+    function pill(label, state = "ON") {
+      return `
+        <div class="pill-row">
+          <span class="dot"></span>
+          <span>${label}</span>
+          <span class="state">${state}</span>
+        </div>
+      `;
+    }
+
+    function heroVisual() {
+      return `
+        <div class="extension-mock">
+          <div class="mock-header">
+            <div class="mock-brand">
+              <img src="${iconPath}" alt="">
+              <div>
+                <div>TimeBack</div>
+                <small>Reclaim your time</small>
+              </div>
+            </div>
+            <div class="mock-toggle"></div>
+          </div>
+          <div class="time-card">
+            <strong>7.5</strong>
+            <span>hrs / week saved</span>
+            <div class="mini-metrics">
+              <div class="mini-metric"><b>16.3</b><small>days / year</small></div>
+              <div class="mini-metric"><b>650</b><small>days / life</small></div>
+            </div>
+          </div>
+          <div class="mock-section">
+            <div class="mock-label">Focus blockers</div>
+            ${pill("YT Shorts")}
+            ${pill("YT Feed")}
+            ${pill("LinkedIn Feed")}
+            ${pill("Unsubscribe All", "GO")}
+          </div>
+        </div>
+      `;
+    }
+
+    function stepsVisual() {
+      const steps = [
+        ["1", "Toggle blockers", "Pick Shorts, YouTube Home, or LinkedIn Feed."],
+        ["2", "Browse cleaner", "Content scripts hide the surfaces you chose."],
+        ["3", "Track impact", "Counters and time saved update in Chrome storage."]
+      ];
+
+      return `
+        <div class="step-grid">
+          ${steps.map(step => `
+            <div class="step-card">
+              <b>${step[0]}</b>
+              <strong>${step[1]}</strong>
+              <span>${step[2]}</span>
+            </div>
+          `).join("")}
+        </div>
+      `;
+    }
+
+    function askVisual() {
+      const rows = [
+        ["YouTube Shorts", "Hide shelves, search results, nav links, and direct Shorts visits."],
+        ["YouTube Home", "Keep YouTube usable without the recommendation grid."],
+        ["LinkedIn Feed", "Remove feed posts while leaving the rest of LinkedIn."],
+        ["Gmail Subscriptions", "Open Gmail's subscription table and clean it in sequence."]
+      ];
+
+      return `
+        <div class="settings-board">
+          ${rows.map(row => `
+            <div class="setting-row">
+              <div><strong>${row[0]}</strong><span>${row[1]}</span></div>
+              <div class="switch"></div>
+            </div>
+          `).join("")}
+          <div class="setting-key">
+            <div><strong>Optional AI assist</strong><span>Only for external unsubscribe pages.</span></div>
+            <div class="masked-key">local key</div>
+          </div>
+        </div>
+      `;
+    }
+
+    function proofVisual() {
+      return `
+        <div class="proof-panel">
+          <div class="flow-row">
+            <div class="flow-box"><strong>Manifest V3</strong><span>Runs as a Chrome extension with content scripts.</span></div>
+            <div class="arrow">-&gt;</div>
+            <div class="flow-box"><strong>Site rules</strong><span>CSS and DOM checks hide known distraction surfaces.</span></div>
+            <div class="arrow">-&gt;</div>
+            <div class="flow-box"><strong>Local result</strong><span>Cleaner pages, counters, and estimated time saved.</span></div>
+          </div>
+          <div class="site-chip-row">
+            <div class="site-chip">YouTube</div>
+            <div class="site-chip">LinkedIn</div>
+            <div class="site-chip">Gmail</div>
+            <div class="site-chip">OpenRouter</div>
+          </div>
+        </div>
+      `;
+    }
+
+    function resultsVisual() {
+      return `
+        <div class="metric-panel">
+          <div class="metric-hero">
+            <div>
+              <strong>7.5</strong>
+              <span>hours saved each week</span>
+            </div>
+            <div class="state">LOCAL</div>
+          </div>
+          <div class="metric-grid">
+            <div class="metric-tile"><b>128</b><small>Shorts</small></div>
+            <div class="metric-tile"><b>42</b><small>Videos</small></div>
+            <div class="metric-tile"><b>86</b><small>Posts</small></div>
+            <div class="metric-tile"><b>31</b><small>Unsubs</small></div>
+          </div>
+        </div>
+      `;
+    }
+
+    function actionVisual() {
+      const rows = ["Daily deals", "Old newsletter", "Launch digest", "Product updates"];
+      return `
+        <div class="browser-mock">
+          <div class="browser-top">
+            <div class="dots"><span></span><span></span><span></span></div>
+            <div class="url">mail.google.com/mail/u/0/#sub</div>
+          </div>
+          <div class="gmail-body">
+            ${rows.map(row => `<div class="mail-row"><span>${row}</span><button>Unsubscribe</button></div>`).join("")}
+            <div class="gmail-overlay">
+              <div class="overlay-head"><span>TimeBack</span><span>62%</span></div>
+              <div class="overlay-body">
+                <div class="progress-label">Unsubscribing from Launch digest...</div>
+                <div class="progress-track"><div class="progress-fill"></div></div>
+                <div class="overlay-actions"><span>Pause</span><span>Focus tab</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    function trustVisual() {
+      const facts = [
+        ["1", "No bundled backend", "The extension runs in Chrome with no TimeBack server in this repo."],
+        ["2", "Chrome storage", "Settings, counters, and optional key state stay in extension storage."],
+        ["3", "Your OpenRouter key", "External-page AI assist only runs when you provide a key."],
+        ["4", "Visible caps", "The popup tracks per-session and per-day AI spend caps."]
+      ];
+
+      return `
+        <div class="trust-panel">
+          ${facts.map(item => `
+            <div class="trust-item">
+              <div class="trust-icon">${item[0]}</div>
+              <div><strong>${item[1]}</strong><span>${item[2]}</span></div>
+            </div>
+          `).join("")}
+        </div>
+      `;
+    }
+
+    function outcomesVisual() {
+      const outcomes = [
+        ["Deep work", "Stop opening a feed when you only meant to search."],
+        ["Inbox cleanup", "Turn Gmail subscription cleanup into one focused pass."],
+        ["Research days", "Use YouTube and LinkedIn without the default scroll traps."],
+        ["Open-source trust", "Inspect the extension before loading it into Chrome."]
+      ];
+
+      return `
+        <div class="outcome-grid">
+          ${outcomes.map(item => `
+            <div class="outcome-tile"><strong>${item[0]}</strong><span>${item[1]}</span></div>
+          `).join("")}
+        </div>
+      `;
+    }
+
+    function visualFor(name) {
+      if (name === "steps") return stepsVisual();
+      if (name === "ask") return askVisual();
+      if (name === "proof") return proofVisual();
+      if (name === "results") return resultsVisual();
+      if (name === "action") return actionVisual();
+      if (name === "trust") return trustVisual();
+      if (name === "outcomes") return outcomesVisual();
+      return heroVisual();
+    }
+
+    function renderSlide(slide) {
+      return `
+        <main class="ph-frame theme-${slide.theme}">
+          <section class="copy">
+            ${brandLine(slide.kicker)}
+            <h1>${slide.headline}</h1>
+            <p class="subline">${slide.subline}</p>
+          </section>
+          <section class="visual">
+            ${visualFor(slide.visual)}
+          </section>
+        </main>
+      `;
+    }
+
+    function renderThumbnail() {
+      return `
+        <main class="thumbnail">
+          <div class="thumbnail-inner">
+            <img src="${iconPath}" alt="">
+            <strong>TimeBack</strong>
+            <span>Reclaim your time</span>
+          </div>
+        </main>
+      `;
+    }
+
+    const params = new URLSearchParams(window.location.search);
+    const requested = params.get("slide") || "1";
+
+    if (requested === "icon") {
+      document.body.innerHTML = renderThumbnail();
+    } else {
+      const index = Math.max(1, Math.min(8, Number(requested) || 1)) - 1;
+      document.body.innerHTML = renderSlide(slides[index]);
+    }
+  </script>
+</body>
+</html>

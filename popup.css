@@ -1,0 +1,628 @@
+/* ── Reset ──────────────────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  width: 370px;
+  background: #08081a;
+  color: #e2e2f0;
+  font-family: 'Inter', 'SF Pro Display', system-ui, -apple-system, sans-serif;
+  font-size: 13.5px;
+  -webkit-font-smoothing: antialiased;
+  user-select: none;
+}
+
+.app { display: flex; flex-direction: column; }
+
+/* ── Header ────────────────────────────────────────────────────────────────── */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 18px 14px;
+  background: linear-gradient(135deg, rgba(102,126,234,0.12) 0%, rgba(118,75,162,0.08) 100%);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.header-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+}
+
+.brand {
+  font-size: 17px;
+  font-weight: 700;
+  background: linear-gradient(135deg, #667eea, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: 0;
+}
+
+.tagline {
+  font-size: 11px;
+  color: #555570;
+  margin-top: 1px;
+}
+
+/* ── Master Toggle ─────────────────────────────────────────────────────────── */
+.master-toggle {
+  position: relative;
+  display: inline-flex;
+  cursor: pointer;
+}
+
+.master-toggle input { position: absolute; opacity: 0; width: 0; height: 0; }
+
+.track {
+  width: 44px;
+  height: 24px;
+  background: #1e1e3a;
+  border: 1.5px solid #2a2a4a;
+  border-radius: 24px;
+  position: relative;
+  transition: background 0.25s, border-color 0.25s;
+}
+
+.thumb {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  top: 50%;
+  left: 2px;
+  transform: translateY(-50%);
+  background: #555;
+  border-radius: 50%;
+  transition: transform 0.25s, background 0.25s, box-shadow 0.25s;
+}
+
+.master-toggle input:checked + .track {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  border-color: #764ba2;
+}
+
+.master-toggle input:checked + .track .thumb {
+  transform: translateX(20px) translateY(-50%);
+  background: #fff;
+  box-shadow: 0 1px 6px rgba(102,126,234,0.5);
+}
+
+/* ── Hero ──────────────────────────────────────────────────────────────────── */
+.hero {
+  text-align: center;
+  padding: 20px 18px 16px;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+
+.hero-number {
+  font-size: 52px;
+  font-weight: 800;
+  letter-spacing: 0;
+  line-height: 1;
+  background: linear-gradient(135deg, #4ade80, #22d3ee);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-unit {
+  font-size: 13px;
+  font-weight: 500;
+  color: #4ade80;
+  opacity: 0.7;
+  margin-top: 4px;
+}
+
+.hero-saved-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin: 16px 0 14px;
+}
+
+.hero-saved-card {
+  padding: 12px 10px;
+  border-radius: 14px;
+  background: linear-gradient(180deg, rgba(22, 26, 58, 0.95), rgba(12, 15, 34, 0.98));
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+.hero-saved-value {
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: 0;
+  line-height: 1;
+  color: #eef2ff;
+}
+
+.hero-saved-label {
+  margin-top: 5px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: #7b82aa;
+}
+
+.hero-bar {
+  height: 4px;
+  background: #151530;
+  border-radius: 2px;
+  margin: 14px auto 8px;
+  width: 80%;
+  overflow: hidden;
+}
+
+.hero-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #4ade80, #22d3ee);
+  border-radius: 2px;
+  transition: width 0.6s ease;
+  width: 0%;
+}
+
+.hero-sub {
+  font-size: 11px;
+  color: #3a3a5a;
+}
+
+/* ── Section Title ─────────────────────────────────────────────────────────── */
+.pills-section { padding: 12px 14px 6px; }
+
+.section-title {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  color: #3a3a5a;
+  margin-bottom: 8px;
+  padding-left: 4px;
+}
+
+/* ── Pill Buttons ──────────────────────────────────────────────────────────── */
+.pill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 11px 14px;
+  margin-bottom: 6px;
+  background: #0f0f28;
+  border: 1.5px solid #1a1a3a;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: inherit;
+  font-size: 13px;
+  color: #e2e2f0;
+  text-align: left;
+}
+
+.pill:hover {
+  background: #141435;
+  border-color: #252550;
+}
+
+.pill:active { transform: scale(0.985); }
+
+/* Dot indicator */
+.pill-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  transition: background 0.25s, box-shadow 0.25s;
+}
+
+.pill-dot.yt    { background: #ff4444; box-shadow: 0 0 6px rgba(255,68,68,0.4); }
+.pill-dot.li    { background: #0a66c2; box-shadow: 0 0 6px rgba(10,102,194,0.4); }
+.pill-dot.gmail { background: #ea4335; box-shadow: 0 0 6px rgba(234,67,53,0.4); }
+
+.pill-icon {
+  flex-shrink: 0;
+  color: #555570;
+  display: flex;
+  align-items: center;
+}
+
+.pill-label {
+  flex: 1;
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.pill-time {
+  font-size: 11px;
+  font-weight: 500;
+  color: #4ade80;
+  opacity: 0.7;
+}
+
+.pill-state {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  padding: 3px 10px;
+  border-radius: 20px;
+  background: rgba(74,222,128,0.12);
+  color: #4ade80;
+  transition: all 0.25s;
+  min-width: 36px;
+  text-align: center;
+}
+
+.pill-arrow {
+  color: #3a3a5a;
+  display: flex;
+  align-items: center;
+  transition: color 0.2s;
+}
+
+.pill:hover .pill-arrow { color: #667eea; }
+
+/* Active pill states */
+.pill.active { border-color: rgba(74,222,128,0.15); }
+.pill.active .pill-dot.yt    { background: #ff4444; }
+.pill.active .pill-dot.li    { background: #0a66c2; }
+.pill.active .pill-icon { color: #8888a0; }
+
+/* Inactive pill */
+.pill.off {
+  opacity: 0.45;
+  border-color: #141430;
+}
+
+.pill.off .pill-dot { background: #2a2a40 !important; box-shadow: none !important; }
+.pill.off .pill-state {
+  background: rgba(255,255,255,0.04);
+  color: #3a3a5a;
+}
+.pill.off .pill-time { opacity: 0.3; }
+
+/* Gmail pill */
+.pill.gmail { border-color: #1a1a3a; }
+.pill.gmail:hover { border-color: rgba(234,67,53,0.25); }
+.pill.gmail .pill-icon { color: #ea4335; }
+
+/* Disabled state when master is off */
+.pill.disabled {
+  opacity: 0.25;
+  pointer-events: none;
+}
+
+/* ── Gmail Active Bar ─────────────────────────────────────────────────────── */
+.gmail-active-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  margin-bottom: 6px;
+  background: rgba(234,67,53,0.08);
+  border: 1.5px solid rgba(234,67,53,0.2);
+  border-radius: 12px;
+  animation: gmail-bar-pulse 2s ease-in-out infinite;
+}
+
+@keyframes gmail-bar-pulse {
+  0%, 100% { border-color: rgba(234,67,53,0.2); }
+  50% { border-color: rgba(234,67,53,0.4); }
+}
+
+.gmail-active-bar.paused {
+  background: rgba(255,180,50,0.08);
+  border-color: rgba(255,180,50,0.25);
+  animation: none;
+}
+
+.gmail-active-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  flex: 1;
+}
+
+.gmail-active-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #ea4335;
+  box-shadow: 0 0 6px rgba(234,67,53,0.5);
+  flex-shrink: 0;
+  animation: gmail-dot-blink 1.2s ease-in-out infinite;
+}
+
+@keyframes gmail-dot-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+.gmail-active-bar.paused .gmail-active-dot {
+  background: #ffb432;
+  box-shadow: 0 0 6px rgba(255,180,50,0.5);
+  animation: none;
+}
+
+.gmail-active-text {
+  font-size: 11px;
+  font-weight: 600;
+  color: #b0b0c0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.gmail-active-controls {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.gmail-pause-btn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.08);
+  color: #ccc;
+  padding: 5px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 11px;
+  font-weight: 600;
+  font-family: inherit;
+  transition: all 0.15s;
+}
+
+.gmail-pause-btn:hover {
+  background: rgba(255,255,255,0.1);
+  border-color: rgba(255,255,255,0.15);
+  color: #fff;
+}
+
+.gmail-pause-btn:active { transform: scale(0.95); }
+
+.gmail-focus-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.08);
+  color: #888;
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.gmail-focus-btn:hover {
+  background: rgba(102,126,234,0.15);
+  border-color: rgba(102,126,234,0.3);
+  color: #667eea;
+}
+
+.gmail-focus-btn:active { transform: scale(0.95); }
+
+/* ── Gmail AI Card ────────────────────────────────────────────────────────── */
+.gmail-ai-card {
+  margin-bottom: 6px;
+  padding: 12px;
+  background: linear-gradient(180deg, rgba(18, 18, 40, 0.95), rgba(14, 14, 32, 0.95));
+  border: 1px solid rgba(102, 126, 234, 0.18);
+  border-radius: 12px;
+}
+
+.gmail-ai-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.gmail-ai-title {
+  font-size: 12px;
+  font-weight: 700;
+  color: #dfe6ff;
+}
+
+.gmail-ai-badge {
+  padding: 3px 8px;
+  border-radius: 999px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  color: #ffb432;
+  background: rgba(255, 180, 50, 0.12);
+  border: 1px solid rgba(255, 180, 50, 0.16);
+}
+
+.gmail-ai-badge.ready {
+  color: #4ade80;
+  background: rgba(74, 222, 128, 0.12);
+  border-color: rgba(74, 222, 128, 0.18);
+}
+
+.gmail-ai-copy {
+  margin-bottom: 10px;
+  color: #8d92b4;
+  font-size: 11px;
+  line-height: 1.45;
+}
+
+.gmail-ai-label {
+  display: block;
+  margin-bottom: 6px;
+  color: #7278a2;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+}
+
+.gmail-ai-input {
+  width: 100%;
+  padding: 10px 11px;
+  margin-bottom: 8px;
+  border: 1px solid rgba(102, 126, 234, 0.16);
+  border-radius: 10px;
+  background: rgba(5, 7, 20, 0.95);
+  color: #eef2ff;
+  font: inherit;
+  outline: none;
+}
+
+.gmail-ai-input:focus {
+  border-color: rgba(102, 126, 234, 0.44);
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.12);
+}
+
+.gmail-ai-actions {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.gmail-ai-btn {
+  flex: 1;
+  padding: 8px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 9px;
+  background: rgba(255, 255, 255, 0.04);
+  color: #c7cae4;
+  font: inherit;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.gmail-ai-btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+}
+
+.gmail-ai-btn:active { transform: scale(0.97); }
+
+.gmail-ai-btn.primary {
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.92), rgba(118, 75, 162, 0.92));
+  border-color: rgba(102, 126, 234, 0.32);
+  color: #fff;
+}
+
+.gmail-ai-metrics {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.gmail-ai-metric {
+  padding: 9px 10px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.gmail-ai-metric span {
+  display: block;
+  margin-bottom: 5px;
+  color: #7278a2;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+}
+
+.gmail-ai-metric strong {
+  display: block;
+  color: #eef2ff;
+  font-size: 12px;
+  line-height: 1.3;
+  word-break: break-word;
+}
+
+.gmail-ai-status {
+  font-size: 11px;
+  color: #8d92b4;
+  min-height: 14px;
+}
+
+.gmail-ai-status.error { color: #ff8a8a; }
+.gmail-ai-status.ready { color: #4ade80; }
+
+/* ── Stats ─────────────────────────────────────────────────────────────────── */
+.stats {
+  display: flex;
+  align-items: center;
+  padding: 14px 16px;
+  border-top: 1px solid rgba(255,255,255,0.04);
+  margin-top: 4px;
+}
+
+.stat { flex: 1; text-align: center; }
+
+.stat-val {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1;
+}
+
+.yt-color    { color: #ff4444; }
+.li-color    { color: #0a66c2; }
+.gmail-color { color: #ea4335; }
+
+.stat-label {
+  font-size: 9px;
+  color: #2e2e4a;
+  margin-top: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+
+.stat-sep {
+  width: 1px;
+  height: 30px;
+  background: #151530;
+  flex-shrink: 0;
+}
+
+.reset-btn {
+  background: transparent;
+  border: 1px solid #1e1e3a;
+  color: #3a3a5a;
+  padding: 5px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 10.5px;
+  font-weight: 600;
+  font-family: inherit;
+  transition: all 0.15s;
+}
+
+.reset-btn:hover {
+  border-color: #3a3a5a;
+  color: #8888a0;
+  background: rgba(255,255,255,0.03);
+}
+
+.reset-btn:active { transform: scale(0.95); }
+
+/* ── Footer ────────────────────────────────────────────────────────────────── */
+.footer {
+  text-align: center;
+  padding: 10px;
+  font-size: 10px;
+  color: #1e1e3a;
+  font-style: italic;
+  letter-spacing: 0.3px;
+}

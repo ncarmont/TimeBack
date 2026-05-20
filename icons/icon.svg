@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea"/>
+      <stop offset="100%" style="stop-color:#764ba2"/>
+    </linearGradient>
+    <linearGradient id="arrow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4ade80"/>
+      <stop offset="100%" style="stop-color:#22d3ee"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Rounded square background -->
+  <rect x="4" y="4" width="120" height="120" rx="28" ry="28" fill="url(#bg)"/>
+
+  <!-- Clock face circle -->
+  <circle cx="64" cy="62" r="34" fill="none" stroke="white" stroke-width="5" opacity="0.95"/>
+
+  <!-- Clock hour marks (12, 3, 6, 9) -->
+  <line x1="64" y1="32" x2="64" y2="38" stroke="white" stroke-width="3" stroke-linecap="round" opacity="0.7"/>
+  <line x1="94" y1="62" x2="88" y2="62" stroke="white" stroke-width="3" stroke-linecap="round" opacity="0.7"/>
+  <line x1="64" y1="92" x2="64" y2="86" stroke="white" stroke-width="3" stroke-linecap="round" opacity="0.7"/>
+  <line x1="34" y1="62" x2="40" y2="62" stroke="white" stroke-width="3" stroke-linecap="round" opacity="0.7"/>
+
+  <!-- Clock hands -->
+  <line x1="64" y1="62" x2="64" y2="42" stroke="white" stroke-width="4.5" stroke-linecap="round"/>
+  <line x1="64" y1="62" x2="79" y2="54" stroke="white" stroke-width="3.5" stroke-linecap="round"/>
+
+  <!-- Center dot -->
+  <circle cx="64" cy="62" r="3.5" fill="white"/>
+
+  <!-- Rewind/back arrow at bottom -->
+  <path d="M 48 102 C 40 96, 38 86, 42 80" fill="none" stroke="url(#arrow)" stroke-width="4.5" stroke-linecap="round"/>
+  <polygon points="40,102 50,106 50,98" fill="url(#arrow)"/>
+
+  <!-- Forward swoosh -->
+  <path d="M 80 102 C 88 96, 90 86, 86 80" fill="none" stroke="url(#arrow)" stroke-width="4.5" stroke-linecap="round"/>
+  <polygon points="88,102 78,106 78,98" fill="url(#arrow)"/>
+</svg>

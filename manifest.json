@@ -1,0 +1,54 @@
+{
+  "manifest_version": 3,
+  "name": "TimeBack",
+  "version": "2.0.0",
+  "description": "Reclaim your time by blocking Shorts, feeds, and newsletter clutter from Chrome.",
+  "minimum_chrome_version": "105",
+  "permissions": ["storage", "tabs"],
+  "host_permissions": [
+    "https://www.youtube.com/*",
+    "https://www.linkedin.com/*",
+    "https://mail.google.com/*",
+    "https://openrouter.ai/*",
+    "<all_urls>"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "TimeBack — Reclaim Your Time",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/*"],
+      "js": ["youtube.js"],
+      "run_at": "document_start"
+    },
+    {
+      "matches": ["https://www.linkedin.com/*"],
+      "js": ["linkedin.js"],
+      "run_at": "document_start"
+    },
+    {
+      "matches": ["https://mail.google.com/*"],
+      "js": ["gmail.js"],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": ["<all_urls>"],
+      "js": ["unsubscribe.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
